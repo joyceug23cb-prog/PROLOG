@@ -1,0 +1,31 @@
+% Medical Diagnosis System
+
+% Facts
+
+fever(ram).
+cough(ram).
+
+
+% Flu rule
+
+flu(X) :-
+    fever(X),
+    cough(X).
+
+
+% Disease rule
+
+disease(X) :-
+    flu(X).
+
+
+% Consultation rule
+
+consults(X, Doctor) :-
+    disease(X).
+
+
+% Diagnosis rule
+
+diagnoses(Doctor, X, flu) :-
+    flu(X).
